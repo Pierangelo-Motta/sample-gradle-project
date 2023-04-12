@@ -64,12 +64,13 @@ public class CompressionDecorator extends DataSourceDecorator {
      * compress the data.
      * 
      * @param stringData is the value to be compressed.
+     * @return the compressed string.
      */
     private String compress(final String stringData) {
-        byte[] data = stringData.getBytes();
+        final byte[] data = stringData.getBytes();
         try {
-            ByteArrayOutputStream bout = new ByteArrayOutputStream(BUFFER);
-            DeflaterOutputStream dos = new DeflaterOutputStream(bout, new Deflater(compLevel));
+            final ByteArrayOutputStream bout = new ByteArrayOutputStream(BUFFER);
+            final DeflaterOutputStream dos = new DeflaterOutputStream(bout, new Deflater(compLevel));
             dos.write(data);
             dos.close();
             bout.close();
@@ -80,13 +81,13 @@ public class CompressionDecorator extends DataSourceDecorator {
     }
 
     private String decompress(final String stringData) {
-        byte[] data = Base64.getDecoder().decode(stringData);
+        final byte[] data = Base64.getDecoder().decode(stringData);
         try {
-            InputStream in = new ByteArrayInputStream(data);
-            InflaterInputStream iin = new InflaterInputStream(in);
-            ByteArrayOutputStream bout = new ByteArrayOutputStream(512);
+            final InputStream in = new ByteArrayInputStream(data);
+            final InflaterInputStream iin = new InflaterInputStream(in);
+            final ByteArrayOutputStream bout = new ByteArrayOutputStream(BUFFER);
             int b;
-            while ((b = iin.read()) != -1) {
+            while ((b = iin.read()) != -1) { // NOPMD
                 bout.write(b);
             }
             in.close();

@@ -1,17 +1,35 @@
 package it.unibo.sampleapp.decorators;
 
+/**
+ * decorator class.
+ */
 public class DataSourceDecorator implements DataSource {
-    private DataSource wrappee;
+    private final DataSource wrappee;
 
-    DataSourceDecorator(DataSource source) {
+    /**
+     * class constructor.
+     * 
+     * @param source is the source.
+     */
+    DataSourceDecorator(final DataSource source) {
         this.wrappee = source;
     }
 
+    /**
+     * class writer.
+     * 
+     * @param data is the data.
+     */
     @Override
-    public void writeData(String data) {
+    public void writeData(final String data) {
         wrappee.writeData(data);
     }
 
+    /**
+     * class readere.
+     * 
+     * @return String value.
+     */
     @Override
     public String readData() {
         return wrappee.readData();

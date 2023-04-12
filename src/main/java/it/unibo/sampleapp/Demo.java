@@ -30,11 +30,11 @@ public final class Demo {
         encoded.writeData(salaryRecords);
         final DataSource plain = new FileDataSource("out\\OutputDemo.txt");
 
-        System.out.println("- Input ----------------");
-        System.out.println(salaryRecords);
-        System.out.println("- Encoded --------------");
-        System.out.println(plain.readData());
-        System.out.println("- Decoded --------------");
-        System.out.println(encoded.readData());
+        System.out.println("- Input ----------------"); // NOPMD
+        System.out.println(salaryRecords); // NOPMD
+        System.out.println("- Encoded --------------"); // NOPMD
+        System.out.println(plain.readData()); // NOPMD
+        System.out.println("- Decoded --------------"); // NOPMD
+        System.out.println(encoded.readData()); // NOPMD
     }
 }
