@@ -1,12 +1,27 @@
 package it.unibo.sampleapp;
 
-import it.unibo.sampleapp.decorators.*;
+import it.unibo.sampleapp.decorators.CompressionDecorator;
+import it.unibo.sampleapp.decorators.DataSource;
+import it.unibo.sampleapp.decorators.DataSourceDecorator;
+import it.unibo.sampleapp.decorators.EncryptionDecorator;
+import it.unibo.sampleapp.decorators.FileDataSource;
 
+/**
+ * Javadoc comment.
+ */
 public final class Demo {
 
+    /**
+     * Javadoc comment.
+     */
     private Demo() {
     }
 
+    /**
+     * Javadoc comment.
+     * 
+     * @param args not used.
+     */
     public static void main(final String[] args) {
         final String salaryRecords = "Name,Salary\nJohn Smith,100000\nSteven Jobs,912000";
         final DataSourceDecorator encoded = new CompressionDecorator(

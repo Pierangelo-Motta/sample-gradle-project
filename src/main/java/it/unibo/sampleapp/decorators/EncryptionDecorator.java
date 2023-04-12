@@ -4,10 +4,13 @@ import java.util.Base64;
 
 public class EncryptionDecorator extends DataSourceDecorator {
 
-    public EncryptionDecorator(DataSource source) {
+    public EncryptionDecorator(final DataSource source) {
         super(source);
     }
 
+    /**
+     * writeData instructions...
+     */
     @Override
     public void writeData(String data) {
         super.writeData(encode(data));
