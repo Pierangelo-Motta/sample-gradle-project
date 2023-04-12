@@ -39,6 +39,7 @@ public class FileDataSource implements DataSource {
     /**
      * Method to read the file.
      */
+
     @Override
     public String readData() {
         char[] buffer = null;
