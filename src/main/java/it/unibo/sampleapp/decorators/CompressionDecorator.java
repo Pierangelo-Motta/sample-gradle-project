@@ -12,7 +12,7 @@ import java.util.zip.InflaterInputStream;
 public class CompressionDecorator extends DataSourceDecorator {
     private int compLevel = 6;
 
-    public CompressionDecorator(DataSource source) {
+    public CompressionDecorator(final DataSource source) {
         super(source);
     }
 
@@ -20,7 +20,7 @@ public class CompressionDecorator extends DataSourceDecorator {
         return compLevel;
     }
 
-    public void setCompressionLevel(int value) {
+    public void setCompressionLevel(final int value) {
         compLevel = value;
     }
 
