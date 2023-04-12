@@ -1,8 +1,9 @@
 package it.unibo.sampleapp.decorators;
 
 /**
- * Interface to manage datasources.
+ * Interface to manage datasources, with 2 methods
  */
+
 public interface DataSource {
     /**
      * Method to write the data.
